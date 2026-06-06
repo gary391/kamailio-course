@@ -15,7 +15,7 @@ services:
       - NET_ADMIN
 
   kamailio-edge:
-    image: kamailio/kamailio-ci:5.4-alpine.debug
+    image: kamailio/kamailio-ci:5.4.7-alpine.debug
     container_name: kamailio-edge
     ports:
       - "5090:5060"
@@ -136,8 +136,8 @@ services:
     container_name: db01
     environment:
       MYSQL_DATABASE: 'kamailio'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'ro_password'
+      MYSQL_USER: 'kamailio'
+      MYSQL_PASSWORD: 'kamailiorw'
       MYSQL_ROOT_PASSWORD: 'rw_password'
     ports:
       - '3306:3306'
